@@ -5,7 +5,7 @@ const schema = Joi.object({ name: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().required() });
 
-const registreition = async (user) => {
+const insertUser = async (user) => {
     const validationEmail = await usersModel.findEmail(user);
     const validationName = schema.validate(user);
     if (validationName.error) {
@@ -21,5 +21,5 @@ const registreition = async (user) => {
 };
 
 module.exports = {
-    registreition,
+    insertUser,
 };

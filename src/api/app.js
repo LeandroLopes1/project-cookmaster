@@ -22,4 +22,6 @@ app.post('/recipes', tokenValidation, recipesController.recipeRegister);
 
 app.get('/recipes', recipesController.recipeList);
 
+app.get('/recipes/:id', recipesController.recipeDetails);
+
 module.exports = app;

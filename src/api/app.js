@@ -20,4 +20,6 @@ app.post('/login', loginController.createLogin);
 
 app.post('/recipes', tokenValidation, recipesController.recipeRegister);
 
+app.get('/recipes', recipesController.recipeList);
+
 module.exports = app;

@@ -17,6 +17,12 @@ const insertRecipe = async (recipe, userId) => {
     return { status: 201, result: newRecipe };
 };
 
+const getRecipes = async () => {
+    const recipes = await recipesModel.listRecipes();
+    return { status: 200, result: recipes };
+};
+
 module.exports = {
     insertRecipe,
+    getRecipes,
 };

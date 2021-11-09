@@ -3,7 +3,7 @@ const bodyParser = require('body-parser').json();
 const usersController = require('../controllers/usersController');
 const loginController = require('../controllers/loginController');
 const recipesController = require('../controllers/recipesController');
-const { tokenValidation } = require('../utils/auth');
+const { tokenValidation, validateUser } = require('../utils/auth');
 
 const app = express();
 app.use(bodyParser);
@@ -23,5 +23,7 @@ app.post('/recipes', tokenValidation, recipesController.recipeRegister);
 app.get('/recipes', recipesController.recipeList);
 
 app.get('/recipes/:id', recipesController.recipeDetails);
+
+app.put('/recipes/:id', tokenValidation, validateUser, recipesController.recipeUpdate);
 
 module.exports = app;

@@ -17,8 +17,17 @@ const recipeDetails = async (req, res) => {
     return res.status(status).json(result);
 };
 
+const recipeUpdate = async (req, res) => {
+    const { id } = req.params;
+    const newRecipe = req.body;
+    const { status, result } = await recipesService
+      .updateRecipe(id, newRecipe);
+    return res.status(status).json(result);
+  };
+
 module.exports = {
     recipeRegister,
     recipeList,
     recipeDetails,
+    recipeUpdate,
 };

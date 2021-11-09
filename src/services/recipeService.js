@@ -30,8 +30,8 @@ const getRecipeId = async (id) => {
     return { status: 200, result: recipe };
 };
 
-const updateRecipe = async (id, newRecipe) => {
-    const recipe = await recipesModel.updateRecipe(id, newRecipe);
+const updateRecipe = async (id, recipeDataNew) => {
+    const recipe = await recipesModel.updateRecipe(id, recipeDataNew);
     return { status: 200, result: recipe };
 };
 

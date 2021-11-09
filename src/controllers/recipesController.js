@@ -26,9 +26,16 @@ const recipeUpdate = async (req, res) => {
     return res.status(status).json(result);
   };
 
+const recipeDelete = async (req, res) => {
+    const { id } = req.params;
+    const { status, result } = await recipesService.deleteRecipe(id);
+    return res.status(status).json(result);
+};
+
 module.exports = {
     recipeRegister,
     recipeList,
     recipeDetails,
     recipeUpdate,
+    recipeDelete,
 };

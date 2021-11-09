@@ -26,4 +26,6 @@ app.get('/recipes/:id', recipesController.recipeDetails);
 
 app.put('/recipes/:id', tokenValidation, validateUser, recipesController.recipeUpdate);
 
+app.delete('/recipes/:id', tokenValidation, validateUser, recipesController.recipeDelete);
+
 module.exports = app;

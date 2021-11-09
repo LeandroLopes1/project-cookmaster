@@ -40,10 +40,16 @@ const deleteRecipe = async (id) => {
     return { status: 204, result: recipe };
 };
 
+const addImage = async (id, image) => {
+    const recipe = await recipesModel.addImage(id, image);
+    return { status: 200, result: recipe };
+};
+
 module.exports = {
     insertRecipe,
     getRecipes,
     getRecipeId,
     updateRecipe,
     deleteRecipe,
+    addImage,
 };

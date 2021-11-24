@@ -24,7 +24,7 @@ const executeDevTests = async () => {
       lines,
     };
   } catch (error) {
-    console.error(`Não foi possível executar/ler o teste cobertura\n\n${err}\n\nTentando novamente...\n`);
+    console.error(`Não foi possível executar/ler o teste cobertura\n\n${error}\n\nTentando novamente...\n`);
     return executeDevTests();
   }
 }
